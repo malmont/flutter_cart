@@ -18,15 +18,11 @@ class CommandeModel {
     required this.adresse,
   });
 
-  factory CommandeModel.fromJson(Map<String, dynamic> json) {
-    // final cart = CartModel.fromJson(json);
-    // final adresse = AdresseModel.fromJson(json);
-    return CommandeModel(
-      adresse: AdresseModel.fromJson(json["adresse"]),
-      id: null,
-      listCart: List<CartModel>.from(
-          json["listCart"].map((x) => CartModel.fromJson(x)).toList()),
-    );
+  CommandeModel.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    adresse = AdresseModel.fromJson(json["adresse"]);
+    listCart = List<CartModel>.from(
+        json["listCart"].map((x) => CartModel.fromJson(x)).toList());
   }
 
   Map<String, dynamic> toJson() {

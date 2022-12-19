@@ -173,7 +173,7 @@ class _ListTotalCommandeState extends State<ListTotalCommande> {
                               child: Row(
                                 children: [
                                   Text(
-                                    "Num commande ".toUpperCase(),
+                                    "Commande ".toUpperCase(),
                                     style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         color: Colors.purple),
@@ -193,7 +193,7 @@ class _ListTotalCommandeState extends State<ListTotalCommande> {
                         ),
                         subtitle: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
+                          children: const [
                             Text(
                                 "Cliquez pour voir les détails de votre commande"),
                           ],

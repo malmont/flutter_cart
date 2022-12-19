@@ -7,6 +7,7 @@ import '../../component/custom_btn.dart';
 import '../../component/widget_titre.dart';
 import '../../controller/controllers.dart';
 import '../../model/adresse.dart';
+import '../../model/cart.dart';
 import '../../model/commande.dart';
 import '../cart/Recap_cart_widget.dart';
 import 'components/adresse_component.dart';
@@ -57,16 +58,17 @@ class ValidationCommande extends StatelessWidget {
                 foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
               ),
-              onPressed: () {
+              onPressed: () async {
                 var commande = CommandeModel(
                   adresse: adresseSave,
                   id: nanoid(),
-                  listCart: cartController.cartList,
+                  listCart: List.from(cartController.cartList),
                 );
                 commandeController.updateCommandeList(commande);
-                commandeController.save(remove: false);
+                await commandeController.save(remove: false);
                 cartController.deleteCart();
-                Get.toNamed("/");
+
+                Get.offAllNamed("/");
               },
               child: Padding(
                 padding: const EdgeInsets.all(6.0),

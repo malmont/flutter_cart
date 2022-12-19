@@ -140,7 +140,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
           child: FloatingActionButton(
             backgroundColor: Colors.white,
             onPressed: () {
-              Get.to(() => const ShoppingCartScreen());
+              Get.off(() => const ShoppingCartScreen());
             },
             child: const Icon(
               Icons.shopping_cart_outlined,

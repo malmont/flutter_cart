@@ -4,7 +4,7 @@ import 'package:flutter_cart/model/commande.dart';
 import '../../component/widget_titre.dart';
 
 import 'components/adresse_component.dart';
-import 'components/list_article_commande.dart';
+import 'components/recap_commande_component.dart';
 
 class RecapCommande extends StatelessWidget {
   final CommandeModel commande;
@@ -40,7 +40,7 @@ class RecapCommande extends StatelessWidget {
             titre: 'Récapitulatif de la commande',
           ),
           SizedBox(
-            height: 390,
+            height: 270,
             child: RecapCommandeComponent(cartList: commande.listCart!),
           ),
         ],
