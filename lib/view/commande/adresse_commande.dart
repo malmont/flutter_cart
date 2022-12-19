@@ -210,10 +210,10 @@ class _AdresseCommandeState extends State<AdresseCommande> {
                       child: CustomButton(
                           text: "Continuer",
                           onTap: () {
-                            setState(() {
-                              if (formKey.currentState!.validate()) {
-                                formKey.currentState!.save();
-                                {
+                            if (formKey.currentState!.validate()) {
+                              formKey.currentState!.save();
+                              {
+                                setState(() {
                                   AdresseModel adresseSave = AdresseModel(
                                     adresse: adresse,
                                     id: 1,
@@ -225,9 +225,9 @@ class _AdresseCommandeState extends State<AdresseCommande> {
                                   Get.to(() => ValidationCommande(
                                         adresseSave: adresseSave,
                                       ));
-                                }
+                                });
                               }
-                            });
+                            }
                           }))
                 ],
               ),
